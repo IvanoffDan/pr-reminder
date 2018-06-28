@@ -12,6 +12,7 @@ var log = utils.GetLogger()
 func main() {
 	appConfig := utils.NewConfig()
 	appConfig.Log()
+	appConfig.LogUsers()
 
 	bbService := service.NewBBService(appConfig)
 
