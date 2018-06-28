@@ -13,13 +13,13 @@ var once sync.Once
 // GetLogger returns a new instance of a logger
 func GetLogger() *logrus.Logger {
 	once.Do(func() {
-		Logger = NewLogger()
+		Logger = newLogger()
 	})
 	return Logger
 }
 
-// NewLogger creates a new instance of Logger
-func NewLogger() *logrus.Logger {
+// newLogger creates a new instance of Logger
+func newLogger() *logrus.Logger {
 	logger := logrus.New()
 	logger.Formatter = &logrus.TextFormatter{
 		ForceColors: true,
