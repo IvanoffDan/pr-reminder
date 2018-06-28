@@ -1,0 +1,15 @@
+version: '3.2'
+services:
+  core:
+    build:
+      context: .
+      args:
+        APP_PATH: ${APP_PATH}
+    env_file:
+      - .env
+    ports:
+      - "8000:8000"
+    volumes:
+      - type: bind
+        source: .
+        target: ${APP_PATH}
